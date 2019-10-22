@@ -19,16 +19,18 @@ class App extends React.Component {
   }
   
    componentDidMount(){
+
+     
      this.state.map(MenuItems => {
        axios.get('https://entree-f18.herokuapp.com/v1/menu/12')
        .then (items => {
          localStorage.setItem(MenuItems.name, JSON.stringify(items.data.menu_items))
        })
-       ;
+      ;
      })
      
-   }
-
+   
+  }
 
   render() {
     return (
