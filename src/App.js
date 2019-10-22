@@ -1,28 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './Navbar';
 import Jumbotron_BS from './Jumbotron_BS';
+import Card_w_Image_BS from './Card_w_Image_BS.js';
+
 import axios from 'axios';
-import Axios from 'axios';
 
 class App extends React.Component {
- 
-  componentDidMount(){
-    Axios.get('https://entree-f18.herokuapp.com/v1/menu/12')
-      .then (items => {
-        console.log(items.data.menu_items.description)
-      }
-      );
 
-    
+  constructor(props){
+    super(props);
+    this.state = [
+      {name: "Breakfast"},
+      {name: "Lunch"},
+      {name: "Dinner"},
+      {name: "Sides"},
+      {name: "Dessert"}
+    ]
   }
   
-  render (){
-    return(
-      <div className = "App">
-     <Jumbotron_BS title = "Sub-Standard" description = "The standard in sub sammichs"/>
-     </div>
+   componentDidMount(){
+     this.state.map(MenuItems => {
+       axios.get('https://entree-f18.herokuapp.com/v1/menu/12')
+       .then (items => {
+         localStorage.setItem(MenuItems.name, JSON.stringify(items.data.menu_items))
+       })
+       ;
+     })
+     
+   }
+
+
+  render() {
+    return (
+      <div className="App">
+        <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" />
+      </div>
     )
   };
 }
