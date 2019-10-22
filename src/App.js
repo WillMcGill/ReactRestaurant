@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import Jumbotron_BS from './Jumbotron_BS';
-import Card_w_Image_BS from './Card_w_Image_BS.js';
+import MenuNav from './MenuNav';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 import axios from 'axios';
 
@@ -37,8 +39,6 @@ class App extends React.Component {
           })
           ;
       })
-
-
     }
   }
 
@@ -46,6 +46,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" />
+        <MenuNav />
       </div>
     )
   };
