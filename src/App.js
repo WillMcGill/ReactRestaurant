@@ -31,14 +31,15 @@ class App extends React.Component {
       JSON.parse(localStorage.getItem(MenuItems_Local.name));
         
       })
-    }
-    else {
+    } else {
       this.state.map(MenuItems => {
         axios.get('https://entree-f18.herokuapp.com/v1/menu/12')
           .then(items => {
             localStorage.setItem(MenuItems.name, JSON.stringify(items.data.menu_items))
-            })
-          ;
+
+            });
+          
+
       })
     }
     console.log(this.state)
