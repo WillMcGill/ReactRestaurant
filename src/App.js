@@ -33,14 +33,14 @@ class App extends React.Component {
 console.log("working");
 
 
-    this.newMethod();
+    this.apiPull();
     
     this.setState({
       openMeal: "Breakfast"
     });
   }
   
-  newMethod() {
+  apiPull() {
     if (!localStorage.getItem('Breakfast')) {
       console.log('no data');
       this.state.meals.map(MenuItems => {
@@ -48,14 +48,16 @@ console.log("working");
         axios.get('https://entree-f18.herokuapp.com/v1/menu/12')
           .then(items => {
             let data = items.data.menu_items.map(item => {
-              console.log(item);
+              // console.log(item);
               let price = item.description.charCodeAt(0);
-              console.log(price);
+              // console.log(price);
               let title = item.description.slice(0, 15);
               let description = item.description;
-              return { price, title, description };
+              return { price, title, description }
+              
             });
-            localStorage.setItem(MenuItems, JSON.stringify(data));
+          localStorage.setItem(MenuItems, JSON.stringify(data));
+          this.setState({meal: "Breakfast"})
           });
       });
     }
@@ -73,7 +75,21 @@ console.log("working");
     (<div>
       Loading
     </div>)
-  };
+  
+  }
+  render(){
+    return localStorage.length > 0 ? (
+      <div className="App">
+        <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" />
+        <MenuNav ChangeState={this.state} />
+      </div>
+      
+    ) :
+    (<div>
+      Loading
+    </div>)
+  }
+  ;
 }
 
 export default App;
