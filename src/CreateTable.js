@@ -2,15 +2,9 @@ import React from 'react'
 
 class PopulateTable extends React.Component{
     render(){ 
-        return(
-            this.props.ListItems.map(idx => {
-                console.log(idx.name)
-            })
-           
-           
-            
-           
-        )
+        let data = JSON.parse(localStorage.getItem(this.props.ListItem))
+
+        return data.map(item => <tr>{item.description} {item.price}</tr>)
     }
 }
 
@@ -19,9 +13,8 @@ class DynamicTable extends React.Component{
         return(
             <div>
                 <table>
-            <PopulateTable ListItems = {this.props.MealName} />
-                </table>
-           
+                    <PopulateTable ListItem={this.props.MealName} />
+                </table>  
             </div>
             
         )
