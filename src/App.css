@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Fascinate+Inline&display=swap');
+
+
+html{
+  scroll-behavior: smooth;
+}
+
 .App {
   text-align: center;
+  background-color: #D0D0D0;
+ 
 }
 
 .App-logo {
@@ -37,13 +46,33 @@
   margin-right: auto;
 }
 
-/* #NavBar{
-  padding-left: auto;
-  padding-right: auto;
-} */
+td{
+  text-align: right;
+
+}
+
+#itemDesc{
+  text-align: center;
+}
+
+#itemTitle{
+  text-align: left;
+  font-weight: bolder;
+}
+
+.tab-content{
+  max-width: 800px;
+  margin: auto;
+}
+
+#headImage{
+  font-family: 'Fascinate Inline', cursive;
+}
+
 @media (max-width: 690px){
 #headImage{
   background-image: url("bread-bun-chopping-board-tall.jpg");
+  
 }
 }
 

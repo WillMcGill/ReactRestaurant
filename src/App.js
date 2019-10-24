@@ -25,9 +25,15 @@ class App extends React.Component {
       name: "Will",
     }
     this.Navbar_Items = [
-      { name: "Menu", URL: '#' , target: '_SELF'},
-      { name: "Map", URL: '#' , target: '_SELF'},
-      { name: "Contact", URL: '#' , target: '_SELF'}]
+      { name: "Menu", URL: '#menu' , target: '_SELF'},
+      { name: "Map", URL: '#map' , target: '_SELF'},
+      { name: "Contact", URL: '#map' , target: '_SELF'}]
+
+    this.TimeTable = [
+      {day: "Mon - Wed", hours: "Noon - 10pm"},
+      {day: "Thurs - Sat", hours: "Noon - 12am"},
+      {day: "Sun", hours: "1pm - 8pm"}]
+    
 
     }
   
@@ -60,13 +66,12 @@ class App extends React.Component {
               
             });
           localStorage.setItem(MenuItems, JSON.stringify(data));
-          
-          
 
           this.setState({meal: "Breakfast"})
-          });
-          
+          })
+          ;
       }
+      
       );
     }
 }
@@ -76,9 +81,10 @@ class App extends React.Component {
           
     return localStorage.length > 0 ? (
       <div className="App">
-        <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" />
         <Navbar NavbarItems={this.Navbar_Items} />
+        <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" name = {this.state.name}/>
         <MenuNav ChangeState={this.state} />
+        
         <Map />
       </div>
       

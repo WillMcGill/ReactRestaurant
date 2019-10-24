@@ -6,8 +6,8 @@ class MenuNavBar extends React.Component {
     render() {
         let tabs = this.props.ChangeState.meals.map((meal, idx) => {
             return (
-                <Tab label={meal} key={meal}>
-                    <DynamicTable  MealName={meal}/>
+                <Tab label={meal} key={idx}>
+                    <DynamicTable  MealName={meal} key={idx}/>
                 </Tab>);
         })
 
