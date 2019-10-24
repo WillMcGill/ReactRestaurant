@@ -5,6 +5,11 @@ import MenuNav from './MenuNav';
 import DynamicTable from './CreateTable'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+import Navbar from './Navbar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faHackerrank } from '@fortawesome/free-brands-svg-icons';
 
 import axios from 'axios';
 
@@ -22,8 +27,15 @@ class App extends React.Component {
       ],
       name: "Will",
     }
-  }
+    this.Navbar_Items = [
+      { name: "Profile", URL: '#' , target: '_SELF'},
+      { name: "Blog", URL: '#' , target: '_SELF'},
+      { name: "Link", URL: '#' , target: '_SELF'},
+      { name: <FontAwesomeIcon icon={faHackerrank} />, URL: 'https://www.hackerrank.com/mcgill_will' , target: '_blank'},
+      { name: <FontAwesomeIcon icon={faLinkedin} />, URL: 'https://www.linkedin.com/in/will-mcgill/' , target: '_blank' },
+      { name: <FontAwesomeIcon icon={faGithub} />, URL: 'https://github.com/WillMcGill' , target: '_blank'}];
 
+    }
   
 
   componentDidMount() {
@@ -65,10 +77,6 @@ class App extends React.Component {
       }
       );
     }
-    // axios.get('https://uinames.com/api/?region=Azerbaijan')
-    //       .then(items => {this.setState({name: items.data.name})
-    //         console.log (items.data.name)} 
-          
 }
 
   
@@ -76,6 +84,7 @@ class App extends React.Component {
           
     return localStorage.length > 0 ? (
       <div className="App">
+        <Navbar NavbarItems={this.Navbar_Items} />
         <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" />
         <MenuNav ChangeState={this.state} />
       </div>
@@ -89,6 +98,7 @@ class App extends React.Component {
   render(){
     return localStorage.length > 0 ? (
       <div className="App">
+        <Navbar NavbarItems={this.Navbar_Items} />
         <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" />
         <MenuNav ChangeState={this.state} />
       </div>
