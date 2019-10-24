@@ -4,7 +4,6 @@ import DynamicTable from './CreateTable';
 
 class MenuNavBar extends React.Component {
     render() {
-        console.log(this.props)
         let tabs = this.props.ChangeState.meals.map((meal, idx) => {
             return (
                 <Tab label={meal} key={meal}>
@@ -13,7 +12,7 @@ class MenuNavBar extends React.Component {
         })
 
         return (
-            <Tabs onSelect={(index, label) => console.log(label + ' selected')}>
+            <Tabs>
                 {tabs}
             </Tabs>
         )

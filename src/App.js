@@ -20,7 +20,7 @@ class App extends React.Component {
         "Sides",
         "Dessert"
       ],
-      openMeal: "Breakfast",
+      name: "Will",
     }
   }
 
@@ -30,7 +30,6 @@ class App extends React.Component {
     
     // Check if menu data already exists in local storage.
     //If so, store data in local storage in menu state, else pull from API
-console.log("working");
 
 
     this.apiPull();
@@ -51,18 +50,28 @@ console.log("working");
               // console.log(item);
               let price = item.description.charCodeAt(0);
               // console.log(price);
-              let title = item.description.slice(0, 15);
-              let description = item.description;
+              let title = item.description.split(" with");
+              let description = item.description.split("with ");
               return { price, title, description }
               
             });
           localStorage.setItem(MenuItems, JSON.stringify(data));
+          
+          
+
           this.setState({meal: "Breakfast"})
           });
-      });
+          
+      }
+      );
     }
-  }
+    // axios.get('https://uinames.com/api/?region=Azerbaijan')
+    //       .then(items => {this.setState({name: items.data.name})
+    //         console.log (items.data.name)} 
+          
+}
 
+  
   render () {
           
     return localStorage.length > 0 ? (

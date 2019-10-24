@@ -4,7 +4,8 @@ class PopulateTable extends React.Component{
     render(){ 
         let data = JSON.parse(localStorage.getItem(this.props.ListItem))
 
-        return data.map(item => <tr>{item.description} {item.price}</tr>)
+        return data.map(item => <tr><th>{item.title[0]}</th>
+        <td>With {item.description[1]} </td><td>$ {item.price}</td></tr>)
     }
 }
 
