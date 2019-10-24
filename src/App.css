@@ -22,6 +22,28 @@
 }
 
 #headImage{
-  /* background-color: blue; */
-  color: black;
+  background-image: url("bread-bun.jpeg");
+  background-size: 100vw;
+  color: white;
+  height: 50vh;
+  margin-bottom: 0px;
+  padding-top: 0px;
 }
+
+.tabs{
+  /* background-color: blue; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* #NavBar{
+  padding-left: auto;
+  padding-right: auto;
+} */
+@media (max-width: 690px){
+#headImage{
+  background-image: url("bread-bun-chopping-board-tall.jpg");
+}
+}
+

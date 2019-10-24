@@ -6,13 +6,13 @@ class MenuNavBar extends React.Component {
     render() {
         let tabs = this.props.ChangeState.meals.map((meal, idx) => {
             return (
-                <Tab label={meal} key={meal}>
+                <Tab label={meal} key={meal} className>
                     <DynamicTable  MealName={meal}/>
                 </Tab>);
         })
 
         return (
-            <Tabs>
+            <Tabs className = "mx-auto">
                 {tabs}
             </Tabs>
         )
