@@ -53,9 +53,7 @@ class App extends React.Component {
         axios.get('https://entree-f18.herokuapp.com/v1/menu/12')
           .then(items => {
             let data = items.data.menu_items.map(item => {
-              // console.log(item);
-              let price = item.description.charCodeAt(0);
-              // console.log(price);
+              let price = (item.description.charCodeAt(0) - (item.description.charCodeAt(8)/2)).toFixed(2);
               let title = item.description.split(" with");
               let description = item.description.split("with ");
               return { price, title, description }
@@ -90,20 +88,7 @@ class App extends React.Component {
     </div>)
   
   }
-  render(){
-    return localStorage.length > 0 ? (
-      <div className="App">
-        <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" />
-        <Navbar NavbarItems={this.Navbar_Items} />
-        <MenuNav ChangeState={this.state} />
-        <Map />
-      </div>
-      
-    ) :
-    (<div>
-      Loading
-    </div>)
-  }
+  
   ;
 }
 
