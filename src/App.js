@@ -33,17 +33,11 @@ class App extends React.Component {
       {day: "Mon - Wed", hours: "Noon - 10pm"},
       {day: "Thurs - Sat", hours: "Noon - 12am"},
       {day: "Sun", hours: "1pm - 8pm"}]
-    
-
     }
-  
-
   componentDidMount() {
     
     // Check if menu data already exists in local storage.
     //If so, store data in local storage in menu state, else pull from API
-
-
     this.apiPull();
     
     this.setState({
@@ -76,7 +70,6 @@ class App extends React.Component {
     }
 }
 
-  
   render () {
           
     return localStorage.length > 0 ? (
