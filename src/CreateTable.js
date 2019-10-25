@@ -13,7 +13,7 @@ class DynamicTable extends React.Component{
     render(){ 
         return(
             <div>
-                <table id = "#menu" className = "table table-striped table-bordered table-dark mx-auto">
+                <table id = "menu" className = "table table-striped table-bordered table-dark mx-auto">
                     <PopulateTable ListItem={this.props.MealName} />
                 </table>  
             </div>
