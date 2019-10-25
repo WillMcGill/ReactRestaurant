@@ -1,16 +1,68 @@
 import React from 'react'
+import {Map, GoogleApiWrapper, Marker, InfoWindow} from 'google-maps-react';
 
-class Map extends React.Component{
+const mapStyles = {
+    width: "100vw",
+    height: "40vh"
+};
+
+class GoogleMap extends React.Component{
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            showingInfoWindow: false,
+            activeMarker: {},
+            selectedPlace:{}
+        }
+    }
+
+    onMarkerClick = (props, marker, e) => this.setState({
+        selectedPlace: props,
+        activeMarker: marker,
+        showingInfoWindow: true
+    });
+
+    onClose = props => {
+        if(this.state.showingInfoWindow){
+            this.setState({
+                showingInfoWindow: false,
+                activeMarker: null
+            })
+        }
+    };
 
 render(){
     return(
-        <div className = "text-center" id = "map">
-            <h2> 348 East Main St.  Lexington, KY</h2>
-            <h3> <a href="tel:+1-859-555-5555">859-555-5555</a></h3>
-            <a href="#map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3142.211413042586!2d-84.49473234940936!3d38.04215997961205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884244e844532c33%3A0xb6919957af36b713!2s348%20E%20Main%20St%2C%20Lexington%2C%20KY%2040507!5e0!3m2!1sen!2sus!4v1571932395334!5m2!1sen!2sus" width="320" height="320" frameBorder="0" s >
-            </iframe></a>
-        </div>
+        <Map
+            google={this.props.google}
+            zoom={16}
+            style={mapStyles}
+            initialCenter={{
+                lat: 38.042346,
+                lng: -84.492603            
+                }}
+        >
+            <Marker position={{lat: 38.042346,  lng: -84.492603 }}
+                onClick={this.onMarkerClick}
+                name={"Will's Sub-Standard"} />
+
+            <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}>
+
+                <div>
+                    <h2> {this.state.selectedPlace.name}
+
+                    </h2>
+                </div>
+            </InfoWindow>
+        </Map>
     )
 }}
 
-export default Map;
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyCzoDBNFx-EuHZlfibFPP8-uMePFe1AKWU'
+  })(GoogleMap);
