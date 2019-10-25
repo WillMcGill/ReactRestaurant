@@ -35,6 +35,7 @@ class GoogleMap extends React.Component{
 
 render(){
     return(
+        <div>
         <Map
             google={this.props.google}
             zoom={16}
@@ -60,6 +61,11 @@ render(){
                 </div>
             </InfoWindow>
         </Map>
+        
+        <h2>348 E. Main St.</h2>
+        </div>
+
+
     )
 }}
 

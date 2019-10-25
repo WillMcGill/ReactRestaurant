@@ -77,8 +77,12 @@ class App extends React.Component {
         <Navbar NavbarItems={this.Navbar_Items} />
         <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" name = {this.state.name}/>
         <MenuNav ChangeState={this.state} />
-        
+        <h2>348 E. Main. St</h2>
+        <h3><a href = "tel: 555-555-5555">555-555-5555</a></h3>
+        <section id = "map">
         <GoogleMap />
+        </section>
+        
       </div>
       
     ) :
