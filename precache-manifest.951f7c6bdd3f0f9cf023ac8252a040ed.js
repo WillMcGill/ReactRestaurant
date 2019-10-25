@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3974e4daa04130e1dc061b8b67040f3e",
+    "revision": "036f833127259725c64765e9488845cd",
     "url": "/ReactRestaurant/index.html"
   },
   {
-    "revision": "fec63a05d6813a7cc761",
+    "revision": "03edfe8624c96b3df2e2",
     "url": "/ReactRestaurant/static/css/2.510409cd.chunk.css"
   },
   {
-    "revision": "6afce4c7a7ef5bb4d919",
+    "revision": "d8ca2609eb2ee5adbd96",
     "url": "/ReactRestaurant/static/css/main.90cf97b7.chunk.css"
   },
   {
-    "revision": "fec63a05d6813a7cc761",
-    "url": "/ReactRestaurant/static/js/2.b900e4a1.chunk.js"
+    "revision": "03edfe8624c96b3df2e2",
+    "url": "/ReactRestaurant/static/js/2.fb22b254.chunk.js"
   },
   {
-    "revision": "6afce4c7a7ef5bb4d919",
-    "url": "/ReactRestaurant/static/js/main.a6237eb8.chunk.js"
+    "revision": "d8ca2609eb2ee5adbd96",
+    "url": "/ReactRestaurant/static/js/main.9422a04a.chunk.js"
   },
   {
     "revision": "fb422cf04f1220f26032",
