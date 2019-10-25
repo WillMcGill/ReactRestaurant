@@ -89,9 +89,28 @@ class App extends React.Component {
     (<div>
       Loading
     </div>)
+
   
   }
-  
+  render(){	
+    return localStorage.length > 0 ? (	
+      <div className="App">	
+        <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" name = {this.state.name}/>
+        <Navbar NavbarItems={this.Navbar_Items} />	
+        <MenuNav ChangeState={this.state} />	
+        <h2 id = 'contact'>348 E. Main. St</h2>
+
+        <h3><a href = "tel: 555-555-5555">555-555-5555</a></h3>
+        <section id = "map">
+        <GoogleMap />
+        </section>
+      </div>	
+
+    ) :	
+    (<div>	
+      Loading	
+    </div>)	
+  }
   ;
 }
 
