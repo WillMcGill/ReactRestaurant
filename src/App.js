@@ -95,7 +95,7 @@ class App extends React.Component {
         <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" name = {this.state.name}/>
         <Navbar NavbarItems={this.Navbar_Items} />	
         <MenuNav ChangeState={this.state} />	
-        <h2 id = 'contact'>348 E. Main. St</h2>
+        <h2 id = 'contact'>348 East Main St.</h2>
 
         <h3><a href = "tel: 555-555-5555">555-555-5555</a></h3>
         <section id = "map">
