@@ -29,10 +29,7 @@ class App extends React.Component {
       { name: "Map", URL: '#map' , target: '_SELF'},
       { name: "Contact", URL: '#contact' , target: '_SELF'}]
 
-    this.TimeTable = [
-      {day: "Mon - Wed", hours: "Noon - 10pm"},
-      {day: "Thurs - Sat", hours: "Noon - 12am"},
-      {day: "Sun", hours: "1pm - 8pm"}]
+  
     }
   componentDidMount() {
     
