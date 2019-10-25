@@ -27,7 +27,7 @@ class App extends React.Component {
     this.Navbar_Items = [
       { name: "Menu", URL: '#menu' , target: '_SELF'},
       { name: "Map", URL: '#map' , target: '_SELF'},
-      { name: "Contact", URL: '#map' , target: '_SELF'}]
+      { name: "Contact", URL: '#contact' , target: '_SELF'}]
 
     this.TimeTable = [
       {day: "Mon - Wed", hours: "Noon - 10pm"},
@@ -77,7 +77,7 @@ class App extends React.Component {
         <Navbar NavbarItems={this.Navbar_Items} />
         <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" name = {this.state.name}/>
         <MenuNav ChangeState={this.state} />
-        <h2>348 E. Main. St</h2>
+        <h2 id = 'contact'>348 E. Main. St</h2>
         <h3><a href = "tel: 555-555-5555">555-555-5555</a></h3>
         <section id = "map">
         <GoogleMap />
