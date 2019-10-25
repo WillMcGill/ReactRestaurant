@@ -6,7 +6,7 @@ import DynamicTable from './CreateTable'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import Navbar from './Navbar'
-import Map from './Directions'
+import GoogleMap from './Directions'
 
 import axios from 'axios';
 
@@ -78,7 +78,7 @@ class App extends React.Component {
         <Jumbotron_BS title="Sub-Standard" description="The standard in sub sammichs" name = {this.state.name}/>
         <MenuNav ChangeState={this.state} />
         
-        <Map />
+        <GoogleMap />
       </div>
       
     ) :
